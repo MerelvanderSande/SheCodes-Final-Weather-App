@@ -15,7 +15,93 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
+      <h1>Amsterdam</h1>
+      <h2 class="now" id="date">date</h2>
+      <form class="row change">
+        <div class="col-5">
+          <label for="changeCity" class="changeCity"></label>
+          <input
+            type="text"
+            id="city-input"
+            class="form-control"
+            placeholder="Change city"
+            aria-label="Change city"
+            autocomplete="off"
+          />
+        </div>
+        <div class="col-2">
+          <button type="change" class="btn btn-primary button">Change</button>
+        </div>
+        <div class="col-3">
+          <button
+            type="currentLocation"
+            class="btn btn-primary button"
+            id="location"
+          >
+            Current Location
+          </button>
+        </div>
+        <div class="col-2 defenition">
+          <a href="#" id="celsius-link"> ºC </a> |
+          <a href="#" id="farenheit-link"> ºF </a>
+        </div>
+      </form>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-6">
+          <p class="today">Saturday</p>
+          <p class="today" id="temp">32ºC ☀️</p>
+        </div>
+        <div class="col-6 discription">
+          Humidity: <span id="humidity"> 0 </span> %
+          <br />
+          Wind: <span id="wind"> 0 </span> km/h
+        </div>
+      </div>
+      <br />
+      <div class="forecast row">
+        <div class="col-3">
+          <div class="forecastFullDay">
+            <div class="day">Sat</div>
+            <div class="emoji">☀️</div>
+            <div class="forecastTemperature">
+              <span class="forecastTemperatureMin"> 25ºC </span>
+              <span class="forecastTemperatureMax"> 32ºC </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="forecastFullDay">
+            <div class="day">Sun</div>
+            <div class="emoji">☀️</div>
+            <div class="forecastTemperature">
+              <span class="forecastTemperatureMin"> 22ºC </span>
+              <span class="forecastTemperatureMax"> 29ºC </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="forecastFullDay">
+            <div class="day">Mon</div>
+            <div class="emoji">☀️</div>
+            <div class="forecastTemperature">
+              <span class="forecastTemperatureMin"> 18ºC </span>
+              <span class="forecastTemperatureMax"> 24ºC </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="forecastFullDay">
+            <div class="day">Tue</div>
+            <div class="emoji">☀️</div>
+            <div class="forecastTemperature">
+              <span class="forecastTemperatureMin"> 19ºC </span>
+              <span class="forecastTemperatureMax"> 25ºC </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
