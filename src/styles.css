@@ -10,7 +10,7 @@ h1 {
   padding: 10px;
   position: relative;
   top: 20px;
-  font-size: 35px;
+  font-size: 40px;
 }
 h2 {
   font-size: 35px;
@@ -53,11 +53,16 @@ footer {
 }
 .today {
   font-size: 24px;
-  margin: 0px 15px;
+  margin: 10px 0px 0px 15px;
+}
+.icon {
+  position: relative;
+  top: -20px;
 }
 .discription {
   font-size: 20px;
   text-transform: capitalize;
+  margin: 15px 0px;
 }
 .forecast {
   position: relative;
