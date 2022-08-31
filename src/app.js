@@ -22,14 +22,18 @@ if (hours < 10) {
 
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
-function citySearch(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input");
+function search(city) {
   let apiKey = "1a854b43f712ccce729aa504c061af4a";
   let units = "metric";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?q=";
-  let apiUrl = `${apiEndpoint}${city.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${apiEndpoint}${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayCityTemperature);
+}
+
+function handleSumbit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
 }
 
 function displayCityTemperature(response) {
@@ -55,7 +59,7 @@ function displayCityTemperature(response) {
 }
 
 let form = document.querySelector("form");
-form.addEventListener("submit", citySearch);
+form.addEventListener("submit", handleSumbit);
 
 function getCurrentLocation(event) {
   event.preventDefault();
@@ -96,3 +100,5 @@ farenheitLink.addEventListener("click", displayFarenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Amsterdam");
