@@ -41,6 +41,8 @@ function displayCityTemperature(response) {
   showNewCity.innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#current").innerHTML =
+    response.data.weather[0].description;
 }
 
 let form = document.querySelector("form");
