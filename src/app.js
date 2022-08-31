@@ -38,11 +38,17 @@ function displayCityTemperature(response) {
   showCityTemperature.innerHTML = `${temperature} ºC`;
   let input = document.querySelector("#city-input");
   let showNewCity = document.querySelector("h1");
+  let iconElement = document.querySelector("#icon");
   showNewCity.innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#current").innerHTML =
     response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
 let form = document.querySelector("form");
