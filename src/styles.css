@@ -66,6 +66,9 @@ footer {
   position: relative;
   top: -20px;
 }
+.preference {
+  margin: 60px 0px 0px -40px;
+}
 .discription {
   font-size: 20px;
   text-transform: capitalize;
