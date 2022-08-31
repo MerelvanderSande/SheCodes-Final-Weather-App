@@ -1,4 +1,3 @@
-// date
 let now = new Date();
 let h2 = document.querySelector("h2");
 let days = [
@@ -22,8 +21,6 @@ if (hours < 10) {
 }
 
 h2.innerHTML = `${day} ${hours}:${minutes}`;
-
-// input change city and temperature
 
 function citySearch(event) {
   event.preventDefault();
@@ -49,8 +46,6 @@ function displayCityTemperature(response) {
 let form = document.querySelector("form");
 form.addEventListener("submit", citySearch);
 
-// current location button
-
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -65,8 +60,6 @@ function searchLocation(position) {
 
 let currentLocationbutton = document.querySelector("#location");
 currentLocationbutton.addEventListener("click", getCurrentLocation);
-
-// change to farenheit/celcius
 
 function temperatureDefinitionFarenheit(event) {
   event.preventDefault();
