@@ -51,6 +51,13 @@ footer {
   top: 32px;
   right: 15px;
 }
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}
 .today {
   font-size: 24px;
   margin: 10px 0px 0px 15px;

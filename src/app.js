@@ -39,6 +39,9 @@ function displayCityTemperature(response) {
   let input = document.querySelector("#city-input");
   let showNewCity = document.querySelector("h1");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
+
   showNewCity.innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -69,28 +72,27 @@ function searchLocation(position) {
 let currentLocationbutton = document.querySelector("#location");
 currentLocationbutton.addEventListener("click", getCurrentLocation);
 
-function temperatureDefinitionFarenheit(event) {
+function displayFarenheitTemperature(event) {
   event.preventDefault();
-  let linkfarenheit = document.querySelector("#temp");
-  linkfarenheit.innerHTML = `90ºF ☀️`;
+  let temperature = document.querySelector("#temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
 }
 
-let changeTemperatureDefinitionFarenheit =
-  document.querySelector("#farenheit-link");
-changeTemperatureDefinitionFarenheit.addEventListener(
-  "click",
-  temperatureDefinitionFarenheit
-);
-
-function temperatureDefinitionCelsius(event) {
+function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let linkcelcius = document.querySelector("#temp");
-  linkcelcius.innerHTML = `32ºC ☀️`;
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
 }
 
-let changeTemperatureDefinitionCelsius =
-  document.querySelector("#celsius-link");
-changeTemperatureDefinitionCelsius.addEventListener(
-  "click",
-  temperatureDefinitionCelsius
-);
+let celsiusTemperature = null;
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
