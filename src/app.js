@@ -22,6 +22,49 @@ if (hours < 10) {
 
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row"`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              width="42"
+            />
+            <div class="forecastTemperature">
+              <span class="weather-forecast-temperature-min"> 25ºC -</span>
+              <span class="weather-forecast-temperature-max"> 32ºC </span>
+            </div>
+          </div>
+`;
+  });
+  forecastHTML =
+    forecastHTML +
+    `
+          <div class="col-2">
+            <div class="weather-forecast-date">Sat</div>
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              width="42"
+            />
+            <div class="forecastTemperature">
+              <span class="weather-forecast-temperature-min"> 25ºC -</span>
+              <span class="weather-forecast-temperature-max"> 32ºC </span>
+            </div>
+          </div>
+`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let apiKey = "1a854b43f712ccce729aa504c061af4a";
   let units = "metric";
