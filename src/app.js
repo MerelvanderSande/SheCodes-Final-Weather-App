@@ -122,35 +122,10 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayCityTemperature);
 }
 
-function displayFarenheitTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = `${Math.round(fahrenheitTemperature)} ºF`;
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = `${Math.round(celsiusTemperature)} ºC`;
-  celsiusLink.classList.add("active");
-  farenheitLink.classList.remove("active");
-}
-
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSumbit);
 
 let currentLocationbutton = document.querySelector("#location");
 currentLocationbutton.addEventListener("click", getCurrentLocation);
-
-let celsiusTemperature = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Amsterdam");
